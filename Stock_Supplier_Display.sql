@@ -1,3 +1,4 @@
+
 create procedure Stock_Supplier_Display
 as
 begin
