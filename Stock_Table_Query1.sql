@@ -8,6 +8,7 @@ Insert into Stock_Table values(20006,'CR Book',200,260,186051);
 Insert into Stock_Table values(20007,'B5 Book',120,400,186051);
 Insert into Stock_Table values(20008,'pencil case',455,170,186051);
 
+
 --insert item details to the table--
 Insert into Stock_Table values(20010,'Blue Pen',20,300,186053);
 Insert into Stock_Table values(20011,'Black Pen',20,350,186053);
