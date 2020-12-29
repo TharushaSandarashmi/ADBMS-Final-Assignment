@@ -2,7 +2,7 @@
 create procedure Stock_Supplier_Display
 as
 begin
-select s.Item_Id,s.Item_Name,p.Supplier_ID
+select s.Item_ID,s.Item_Name,p.Supplier_ID,p.Supplier_Name
 from Stock_Table s
  join Supplier_Table p
 ON
