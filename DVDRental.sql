@@ -27,11 +27,10 @@ No_of_DVD int,
 Price money,
 Customer_Id int,
 CONSTRAINT pk_ReciptId PRIMARY KEY(Recipt_Id));
-Drop table DVD_Rental;
 
 select * from DVD_Rental;
 
 insert into DVD_Rental values( 10112, 'MD0001',1 ,70 , 914033);
-insert into DVD_Rental values( 10203, 'ED0001',1 ,70 , 914033);
+insert into DVD_Rental values( 10203, 'ED0001',1 ,50 , 914033);
 
 alter table DVD_Rental add CONSTRAINT fk_DId  FOREIGN KEY (DVD_Id) REFERENCES DVD_Details(DVD_Id);
