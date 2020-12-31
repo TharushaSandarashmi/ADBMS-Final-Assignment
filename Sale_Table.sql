@@ -1,4 +1,3 @@
-
 create table Sale_Table(
 Bill_NO int NOT NULL,
 Sale_Date date NOT NULL,
