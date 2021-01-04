@@ -20,4 +20,4 @@ insert into Dependent values ('M001','Sujani Gunathilaka','wife','1983-03-14',07
 ('S002','Nayana Anuradini','wife','1989-08-05',0754442361,9),
 ('M002','Kumara Kirihenage','father','1949-01-07',0115722345,2); 
 
-alter table Dependent add CONSTRAINT fk_EmployeeId  FOREIGN KEY (Employee_Id) REFERENCES Employee(Employee_Id);
+alter table Dependent add CONSTRAINT fk_EmployeeId  FOREIGN KEY (Employee_Id) REFERENCES Employee(Employee_Id) ON DELETE CASCADE;
