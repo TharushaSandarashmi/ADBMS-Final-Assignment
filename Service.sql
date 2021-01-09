@@ -20,3 +20,4 @@ insert into Service values( 001,'Photocopy',3 ,5 ),
 ( 010,'Graphic Design',50 ,6 );
 
 alter table Service add CONSTRAINT fk_EId  FOREIGN KEY (Employee_Id) REFERENCES Employee(Employee_Id);
+alter table Service drop CONSTRAINT fk_EId;
