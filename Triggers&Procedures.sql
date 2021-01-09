@@ -96,11 +96,10 @@ END;
 select dbo.calculateTotalPrice(10112,'MD0001') Total_Price;
 
 
-CREATE TRIGGER  assign_Newemployee ON BookShopeDB
+CREATE TRIGGER  assign_Newemployee ON dbo.Employee 
 AFTER DELETE 
-ON dbo.Employee 
-FOR EACH ROW
+AS
 BEGIN
 update Service set Employee_Id = NULL WHERE
-Employee_Id=OLD.Employee_Id;
+Service.Employee_Id NOT IN (select Employee_Id from Employee);
 END;
