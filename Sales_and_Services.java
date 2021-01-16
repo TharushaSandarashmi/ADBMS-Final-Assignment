@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /*
@@ -102,12 +103,12 @@ public class Sales_and_Services extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -392,9 +393,21 @@ public class Sales_and_Services extends javax.swing.JFrame {
     }//GEN-LAST:event_customerDetailsPanelMouseExited
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
-        this.hide();
-        MainPage mainPage=new MainPage();
-        mainPage.setVisible(true);
+        int result=JOptionPane.showConfirmDialog(null, "Are you sure to logout?", "LOGOUT",JOptionPane.YES_NO_OPTION);
+        if(result==JOptionPane.YES_OPTION)
+        {
+           this.hide();
+           MainPage mainPage=new MainPage();
+           mainPage.setVisible(true);
+        }
+        else if(result==JOptionPane.NO_OPTION)
+        {
+            this.setVisible(true);
+        }
+        else
+        {
+            this.setVisible(true);
+        }
     }//GEN-LAST:event_jLabel2MousePressed
 
     void setColor(JPanel panel)
