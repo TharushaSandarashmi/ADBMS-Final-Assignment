@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /*
@@ -510,9 +511,21 @@ public class BmanAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel33MousePressed
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-        this.hide();
-        MainPage mainPage=new MainPage();
-        mainPage.setVisible(true);
+        int result=JOptionPane.showConfirmDialog(null, "Are you sure to logout?", "LOGOUT",JOptionPane.YES_NO_OPTION);
+        if(result==JOptionPane.YES_OPTION)
+        {
+           this.hide();
+           MainPage mainPage=new MainPage();
+           mainPage.setVisible(true);
+        }
+        else if(result==JOptionPane.NO_OPTION)
+        {
+            this.setVisible(true);
+        }
+        else
+        {
+            this.setVisible(true);
+        }
     }//GEN-LAST:event_jLabel1MousePressed
 
     void setColor(JPanel panel)
