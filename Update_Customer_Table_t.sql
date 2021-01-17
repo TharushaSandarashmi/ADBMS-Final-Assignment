@@ -17,4 +17,6 @@ Customer_Id=@Customer_Id;
 
 END
 
+EXEC updateCustomerTableData  213124,'Tharusha',5,'556/3,colombo','0789789965',647154;
+
 
