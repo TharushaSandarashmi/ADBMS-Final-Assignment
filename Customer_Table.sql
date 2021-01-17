@@ -11,5 +11,8 @@ Service_Id int,
 
 CONSTRAINT pk_customer_id PRIMARY KEY (Customer_Id));
 
+alter table Customer_Table add CONSTRAINT fk_SId  FOREIGN KEY (Service_Id) REFERENCES Service(Service_Id);
+alter table Customer_Table drop CONSTRAINT fk_SId;
+
 
 
