@@ -11,5 +11,5 @@ where Service_Id=@Service_Id;
 
 END;
 
-EXEC c_Customer_Table @Service_Id='007';
+EXEC c_Customer_Table @Service_Id='004';
 
