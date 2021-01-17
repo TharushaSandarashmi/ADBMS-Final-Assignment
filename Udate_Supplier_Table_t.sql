@@ -16,4 +16,6 @@ Supplier_Id=@Supplier_Id;
 
 END
 
+EXEC updateSupplierTableData  '213124','Tharusha','0571714517','556/3,colombo','2021-01-15';
+
 
