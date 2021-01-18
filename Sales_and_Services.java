@@ -357,7 +357,8 @@ public class Sales_and_Services extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel33MousePressed
 
     private void salesDetailsPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salesDetailsPanelMouseClicked
-        
+       Sales sales=new Sales();
+       sales.setVisible(true);
     }//GEN-LAST:event_salesDetailsPanelMouseClicked
 
     private void salesDetailsPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salesDetailsPanelMouseEntered
@@ -369,7 +370,8 @@ public class Sales_and_Services extends javax.swing.JFrame {
     }//GEN-LAST:event_salesDetailsPanelMouseExited
 
     private void serviceDetailsPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDetailsPanelMouseClicked
-        // TODO add your handling code here:
+       Service service=new Service();
+       service.setVisible(true);
     }//GEN-LAST:event_serviceDetailsPanelMouseClicked
 
     private void serviceDetailsPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_serviceDetailsPanelMouseEntered
@@ -381,7 +383,8 @@ public class Sales_and_Services extends javax.swing.JFrame {
     }//GEN-LAST:event_serviceDetailsPanelMouseExited
 
     private void customerDetailsPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerDetailsPanelMouseClicked
-        // TODO add your handling code here:
+       Customer customer=new Customer();
+       customer.setVisible(true);
     }//GEN-LAST:event_customerDetailsPanelMouseClicked
 
     private void customerDetailsPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerDetailsPanelMouseEntered
