@@ -471,7 +471,8 @@ public class BmanAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_employeeDetailsPanelMouseExited
 
     private void dependentDetailsPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dependentDetailsPanelMouseClicked
-        // TODO add your handling code here:
+       Dependent dependent=new Dependent();
+       dependent.setVisible(true);
     }//GEN-LAST:event_dependentDetailsPanelMouseClicked
 
     private void dependentDetailsPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dependentDetailsPanelMouseEntered
@@ -483,7 +484,8 @@ public class BmanAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_dependentDetailsPanelMouseExited
 
     private void stockDetailsPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stockDetailsPanelMouseClicked
-        // TODO add your handling code here:
+       Stock stock=new Stock();
+       stock.setVisible(true);
     }//GEN-LAST:event_stockDetailsPanelMouseClicked
 
     private void stockDetailsPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stockDetailsPanelMouseEntered
@@ -495,7 +497,8 @@ public class BmanAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_stockDetailsPanelMouseExited
 
     private void supplierDetailsPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supplierDetailsPanelMouseClicked
-        // TODO add your handling code here:
+       Supplier supplier=new Supplier();
+       supplier.setVisible(true);
     }//GEN-LAST:event_supplierDetailsPanelMouseClicked
 
     private void supplierDetailsPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supplierDetailsPanelMouseEntered
