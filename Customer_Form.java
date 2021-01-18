@@ -5,18 +5,16 @@
  */
 package BookShopDb;
 
-import java.awt.MenuComponent;
 import static java.awt.SystemColor.text;
 import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -91,11 +89,10 @@ public class Customer_Form extends javax.swing.JFrame {
         txtCusSerID = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,7 +110,7 @@ public class Customer_Form extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +123,7 @@ public class Customer_Form extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(51, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setText("Customer Data Enter Form");
+        jLabel2.setText("Customer Data Add/Update Form");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -184,7 +181,7 @@ public class Customer_Form extends javax.swing.JFrame {
         jScrollPane6.setViewportView(txtCusSerID);
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton1.setText("Enter Data");
+        jButton1.setText("Add Data");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -196,6 +193,14 @@ public class Customer_Form extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton3.setText("Update Data");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -223,7 +228,8 @@ public class Customer_Form extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -253,17 +259,22 @@ public class Customer_Form extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel6))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(jButton2))))
+                                .addGap(30, 30, 30)
+                                .addComponent(jButton3))))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton2)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
@@ -304,24 +315,8 @@ public class Customer_Form extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(jTable1);
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton3.setText("Insert");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton4.setText("Update");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton5.setText("Delete");
+        jButton5.setText("View Data");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -335,11 +330,8 @@ public class Customer_Form extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
+                .addGap(66, 66, 66)
+                .addComponent(jButton5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -348,11 +340,7 @@ public class Customer_Form extends javax.swing.JFrame {
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 23, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jButton3)
-                .addGap(51, 51, 51)
-                .addComponent(jButton4)
-                .addGap(44, 44, 44)
+                .addGap(108, 108, 108)
                 .addComponent(jButton5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -383,17 +371,6 @@ public class Customer_Form extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jTable1.getModel().addTableModelListener((TableModelEvent e) -> {
-             int row=e.getFirstRow();
-             int column=e.getColumn();
-             TableModel model=(TableModel) e.getSource();
-             
-             String newdata=(String) model.getValueAt(row,column);
-             model.setValueAt(newdata,row,column);
-         });        
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(!text.equals("")){
         txtCusID.setText("Enter Your Data");
@@ -423,40 +400,34 @@ public class Customer_Form extends javax.swing.JFrame {
         txtCusSerID.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         DefaultTableModel tableModel = new DefaultTableModel();
          JTable table = new JTable(tableModel);
          
-         
-         tableModel.addColumn("Customer_Id");
-         tableModel.addColumn("Customer_Name");
-         tableModel.addColumn("Quantity");
-         tableModel.addColumn("Customer_Address");
-         tableModel.addColumn("TelNo");
-         tableModel.addColumn("Service_Id");
-         
-         tableModel.insertRow(0, new Object[] {902155,"A.V.D.Silva",2	,"87/2,kaduwela","0751230981",3	});
-         tableModel.insertRow(0, new Object[] {902156,"H.K.D.Wanigasuriya","98,1,kadawatha","0770987652	",9});
-         tableModel.insertRow(0, new Object[] {902165,"L.U.W.Kalupahana",6,"87/5,awissawella","0757654323",5});
-         tableModel.insertRow(0, new Object[] {914026,"A.Samanalee Kumari",10,"77/5,mattakkuliya","0764561094",10});
-         tableModel.insertRow(0, new Object[] {914028,"Y.T.Mahanama",8,"77/3,mattakkuliya","0714328765"	,7});
-         tableModel.insertRow(0, new Object[] {902167,"P.G.Kariyawasam",2,"90/4,mahara"	,"0761095436",10});
-         
-         tableModel.insertRow(tableModel.getRowCount(),new Object[] {""});
+          tableModel.insertRow(tableModel.getRowCount(),new Object[] {""});
          
          JFrame f =new JFrame();
          f.setSize(500,350);
          f.add(new JScrollPane(table));
          f.setVisible(true);      
         
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        List<String[]>arr=new ArrayList<>();
-        MenuComponent row = null;
-        
-        jTable1.remove(row);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jTable1.getModel().addTableModelListener(new TableModelListener(){
+              @Override
+              public void tableChanged(TableModelEvent e) {
+                  
+                  int row=e.getFirstRow();
+                  int column=e.getColumn();
+                  TableModel model=(TableModel) e.getSource();
+                  
+                  String newdata=(String) model.getValueAt(row,column);
+                  model.setValueAt(newdata,row,column);
+              }
+          
+    });        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -497,7 +468,6 @@ public class Customer_Form extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
